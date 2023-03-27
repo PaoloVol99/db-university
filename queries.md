@@ -32,3 +32,6 @@ Queries:
     FROM `degrees`
     WHERE `level` = 'magistrale';
 
+7.
+    SELECT COUNT(*)
+    FROM `departments`;
