@@ -13,7 +13,7 @@ Queries:
 3.
     SELECT *
     FROM `students`
-    WHERE `date_of_birth` < '1993-03-28';
+    WHERE DATEDIFF(CURRENT_DATE, `date_of_birth`) >= 30 * 365.2425
 
 4.
     SELECT *
