@@ -35,3 +35,8 @@ Queries:
 7.
     SELECT COUNT(*)
     FROM `departments`;
+
+8.
+    SELECT COUNT(*)
+    FROM `teachers`
+    WHERE `phone` IS NULL;
