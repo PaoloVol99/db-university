@@ -14,3 +14,9 @@ Queries:
     SELECT *
     FROM `students`
     WHERE `date_of_birth` < '1993-03-28';
+
+4.
+    SELECT *
+    FROM `courses`
+    WHERE `period` = 'I semestre'
+    AND `year` = 1;
