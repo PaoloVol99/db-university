@@ -54,3 +54,14 @@ JOIN queries:
     JOIN `students`
     ON `degrees`.`id` = `students`.`degree_id`
     ORDER BY `students`.`surname`, `students`.`name`;
+
+5.
+    SELECT `degrees`.`name` AS `degree_name`, `courses`.*, `teachers`.*
+    FROM `degrees`
+    JOIN `courses`
+    ON `degrees`.`id` = `courses`.`degree_id`
+    JOIN `course_teacher`
+    ON `courses`.`id` = `course_teacher`.`course_id`
+    JOIN `teachers`
+    ON `course_teacher`.`teacher_id` = `teachers`.`id`
+    ORDER BY `courses`.`degree_id`;
