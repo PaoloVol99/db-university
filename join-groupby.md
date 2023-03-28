@@ -39,3 +39,12 @@ JOIN queries:
     ON `departments`.`id` = `degrees`.`department_id`
     WHERE `departments`.`name` = 'Dipartimento di Neuroscienze'
     AND `degrees`.`level` = 'magistrale';
+
+3. 
+    SELECT CONCAT(`teachers`.`name`, ' ', `teachers`.`surname`) AS `teacher`, `courses`.*
+    FROM `teachers`
+    JOIN `course_teacher`
+    ON `teachers`.`id` = `course_teacher`.`teacher_id`
+    JOIN `courses`
+    ON `course_teacher`.`course_id` = `courses`.`id`
+    WHERE `teachers`.`id` = 44;
