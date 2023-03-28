@@ -15,3 +15,8 @@ GROUP BY queries:
     SELECT AVG(`vote`) AS `media_voto`, `exam_id`
     FROM `exam_student`
     GROUP BY `exam_id`;
+
+4.
+    SELECT `department_id`, COUNT(*) AS `numero_cdl`
+    FROM `degrees`
+    GROUP BY `department_id`;
