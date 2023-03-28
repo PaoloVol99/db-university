@@ -20,3 +20,13 @@ GROUP BY queries:
     SELECT `department_id`, COUNT(*) AS `numero_cdl`
     FROM `degrees`
     GROUP BY `department_id`;
+
+JOIN queries:
+
+1.
+
+    SELECT `degrees`.`name` AS `degree_name`, `students`.*
+    FROM `degrees`
+    INNER JOIN `students`
+    ON `degrees`.`id` = `students`.`degree_id`
+    WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
