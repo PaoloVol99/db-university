@@ -6,7 +6,6 @@ GROUP BY queries:
     GROUP BY YEAR(`enrolment_date`);
 
 2.
-
     SELECT COUNT(*) AS `numero_insegnanti`, `office_address`
     FROM `teachers`
     GROUP BY `office_address`;
@@ -24,7 +23,6 @@ GROUP BY queries:
 JOIN queries:
 
 1.
-
     SELECT `degrees`.`name` AS `degree_name`, `students`.*
     FROM `degrees`
     INNER JOIN `students`
@@ -32,7 +30,6 @@ JOIN queries:
     WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
 
 2.
-
     SELECT *
     FROM `departments`
     INNER JOIN `degrees`
@@ -48,3 +45,12 @@ JOIN queries:
     JOIN `courses`
     ON `course_teacher`.`course_id` = `courses`.`id`
     WHERE `teachers`.`id` = 44;
+
+4.
+    SELECT `students`.`surname` AS `student_surname`, `students`.`name` AS `student_name`, `degrees`.*, `departments`.*
+    FROM `departments`
+    JOIN `degrees`
+    ON `departments`.`id` = `degrees`.`department_id`
+    JOIN `students`
+    ON `degrees`.`id` = `students`.`degree_id`
+    ORDER BY `students`.`surname`, `students`.`name`;
