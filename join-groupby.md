@@ -87,5 +87,6 @@ JOIN queries:
     ON `students`.`id` = `exam_student`.`student_id`
     JOIN `exams`
     ON `exam_student`.`exam_id` = `exams`.`id`
-    GROUP BY `students`.`name`, `students`.`surname`, `exams`.`course_id`  
+    GROUP BY `students`.`name`, `students`.`surname`, `exams`.`course_id`
+    HAVING MAX(`exam_student`.`vote`) >= 18
     ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
