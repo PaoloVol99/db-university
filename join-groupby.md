@@ -80,3 +80,12 @@ JOIN queries:
     WHERE `departments`.`name` = 'Dipartimento di Matematica'
     ORDER BY `teachers`.`surname`;
 
+7.
+    SELECT `students`.`surname`, `students`.`name`, `exams`.`course_id`, COUNT(*) AS `numero_tentativi`
+    FROM `students`
+    JOIN `exam_student`
+    ON `students`.`id` = `exam_student`.`student_id`
+    JOIN `exams`
+    ON `exam_student`.`exam_id` = `exams`.`id`
+    GROUP BY `students`.`name`, `students`.`surname`, `exams`.`course_id`  
+    ORDER BY `students`.`surname` ASC, `students`.`name` ASC;
