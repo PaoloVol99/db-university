@@ -6,3 +6,7 @@ GROUP BY queries:
     GROUP BY YEAR(`enrolment_date`);
 
 2.
+
+    SELECT COUNT(*) AS `numero_insegnanti`, `office_address`
+    FROM `teachers`
+    GROUP BY `office_address`;
